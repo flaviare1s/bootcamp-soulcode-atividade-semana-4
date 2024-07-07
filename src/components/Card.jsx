@@ -1,4 +1,4 @@
-import './Card.css';
+import './Card.css'
 
 const Card = () => {
   const pets = [
@@ -14,15 +14,15 @@ const Card = () => {
     { id: 10, nome: 'Mimi', especie: 'cachorro', idade: '6 meses', image: "https://placedog.net/206/206" },
     { id: 11, nome: 'Mel', especie: 'gato', idade: '1 ano', image: "https://cataas.com/cat" },
     { id: 12, nome: 'Garfield', especie: 'gato', idade: '2 anos', image: "https://cataas.com/cat" }
-  ];
+  ]
 
   const cardsPets = pets.map((pet) => (
     <section className="card" key={pet.id}>
       <h4>Me adota?</h4>
       <img src={pet.image} alt={pet.nome} width="200"/>
-      <h5>{pet.nome}</h5>
-      <p>Espécie: {pet.especie}</p>
-      <p>Idade: {pet.idade}</p>
+      {pet.especie === 'gato' ? <h5 style={{color: 'red'}}>{pet.nome}</h5> : <h5 style={{color: 'blue'}}>{pet.nome}</h5>}
+      {pet.especie === 'gato' ? <p style={{color: 'red'}}>Espécie: {pet.especie}</p> : <p style={{color: 'blue'}}>Espécie: {pet.especie}</p>}
+      {pet.especie === 'gato' ? <p style={{color: 'red'}}>Idade: {pet.idade}</p> : <p style={{color: 'blue'}}>Idade: {pet.idade}</p>}
     </section>
   ))
 
