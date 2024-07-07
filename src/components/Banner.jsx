@@ -1,11 +1,11 @@
 import './Banner.css'
 import imagem from '../assets/banner.jpg'
 
-const Banner = () => {
+const Banner = (props) => {
   return (
     <section className='banner'>
       <img src={imagem} alt="Banner" />
-      <h2>Seja bem-vindo(a) à galeria de pets fofinhos para adoção!</h2>
+      <h2>{props.texto}</h2>
     </section>
   )
 }

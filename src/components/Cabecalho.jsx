@@ -1,7 +1,7 @@
 import Button from './Button'
 import './Cabecalho.css'
 
-const Cabecalho = () => {
+const Cabecalho = (props) => {
   return (
     <header className='cabecalho'>
       <div className="logo">
@@ -10,10 +10,10 @@ const Cabecalho = () => {
       </div>
       <nav className="navbar">
         <ul className='navbar'>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Sobre</a></li>
-          <li><a href="#">Contato</a></li>
-          <Button />
+          <li><a href="#">{props.link1}</a></li>
+          <li><a href="#">{props.link2}</a></li>
+          <li><a href="#">{props.link3}</a></li>
+          <Button texto='Entrar' />
         </ul>
       </nav>
     </header>

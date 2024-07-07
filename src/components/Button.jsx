@@ -1,12 +1,12 @@
 import './Button.css'
 
-const Button = () => {
+const Button = (props) => {
   function handleClick() {
     alert('Você clicou no botão!')
   }
 
   return (
-    <button className='btn-entrar' onClick={handleClick}>Entrar</button>
+    <button className='btn-entrar' onClick={handleClick}>{props.texto}</button>
   )
 }
 
