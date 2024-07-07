@@ -1,10 +1,12 @@
 import './Galeria.css'
+import Card from './Card'
 
 const Galeria = () => {
   return (
-    <div>
-      
-    </div>
+    <section className='galeria'>
+      <h2>Galeria</h2>
+      <Card />
+    </section>
   )
 }
 
