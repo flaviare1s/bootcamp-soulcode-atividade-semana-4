@@ -1,9 +1,10 @@
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  padding: 20px;
+  width: 100%;
+  list-style: none;
 }
 
 .card {
@@ -13,8 +14,19 @@
   justify-content: center;
   padding: 20px;
   width: 220px;
-  height: 320px;
   border: 1px solid green;
   border-radius: 5px;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
