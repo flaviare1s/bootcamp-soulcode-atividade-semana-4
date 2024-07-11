@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
 import { Navbar, Container, Nav } from 'react-bootstrap'
+import ButtonNav from './ButtonNav'
 
-const Cabecalho = () => {
+const Cabecalho = ({ texto }) => {
   return (
     <header className='mb-5'>
       <Navbar bg='success' variant="success" expand="sm">
@@ -18,6 +19,7 @@ const Cabecalho = () => {
               <Link className="nav-link text-white" to='/politicaprivacidade'>Política de Privacidade</Link>
             </Nav>
           </Navbar.Collapse>
+          <ButtonNav texto='Adotar'/>
         </Container>
       </Navbar>
     </header>
