@@ -1,21 +1,25 @@
-import Button from './Button'
-import './Cabecalho.css'
+import { Link } from 'react-router-dom'
+import { Navbar, Container, Nav } from 'react-bootstrap'
 
-const Cabecalho = (props) => {
+const Cabecalho = () => {
   return (
-    <header className='cabecalho'>
-      <div className="logo">
-        <span className="material-symbols-outlined">pets</span>
-        <h1>Adote um Pet</h1>
-      </div>
-      <nav className="navbar">
-        <ul className='navbar'>
-          <li><a href="#">{props.link1}</a></li>
-          <li><a href="#">{props.link2}</a></li>
-          <li><a href="#">{props.link3}</a></li>
-          <Button texto='Entrar' />
-        </ul>
-      </nav>
+    <header className='mb-5'>
+      <Navbar bg='success' variant="success" expand="sm">
+        <Container fluid>
+          <Link to='/' className='text-decoration-none'>
+              <h1 className='text-white'><span className="material-symbols-outlined">pets</span> Adote um Amor</h1>
+          </Link>
+          <Navbar.Toggle />
+          <Navbar.Collapse>
+            <Nav className="ms-auto">
+              <Link className="nav-link text-white" to='/contato'>Contato</Link>
+              <Link className="nav-link text-white" to='/cadastro'>Cadastro</Link>
+              <Link className="nav-link text-white" to='/login'>Login</Link>
+              <Link className="nav-link text-white" to='/politicaprivacidade'>Política de Privacidade</Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </header>
   )
 }

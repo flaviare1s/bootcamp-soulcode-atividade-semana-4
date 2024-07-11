@@ -1,12 +1,13 @@
 import './Banner.css'
+import { Container } from 'react-bootstrap'
 import imagem from '../assets/banner.jpg'
 
-const Banner = (props) => {
+const Banner = ({texto}) => {
   return (
-    <section className='banner'>
+    <Container className='banner'>
       <img src={imagem} alt="Banner" />
-      <h2>{props.texto}</h2>
-    </section>
+      <h2>{texto}</h2>
+    </Container>
   )
 }
 

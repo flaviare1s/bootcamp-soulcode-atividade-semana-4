@@ -22,13 +22,13 @@
   padding: 20px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .galeria {
     grid-template-columns: 1fr;
   }
 }
 
-@media (min-width: 500px) and (max-width: 900px) {
+@media (min-width: 600px) and (max-width: 900px) {
   .galeria {
     grid-template-columns: repeat(2, 1fr);
   }

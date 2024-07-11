@@ -1,18 +1,33 @@
 import './App.css'
-import Banner from './components/Banner'
-import Cabecalho from './components/Cabecalho'
-import Galeria from './components/Galeria'
-import Rodape from './components/Rodape'
+import Cabecalho from "./components/Cabecalho"
+import Home from "./pages/Home"
+import Login from "./pages/Login"
+import Cadastro from "./pages/Cadastro"
+import Contato from "./pages/Contato"
+import NotFound from "./pages/NotFound"
+import Rodape from "./components/Rodape"
+import Politica from "./pages/Politica"
+import { HashRouter, Routes, Route } from "react-router-dom"
 
-function App() {
+const App = () => {
 
   return (
-    <main>
-      <Cabecalho link1='Home' link2='Sobre' link3='Contato' />
-      <Banner texto='Seja bem-vindo(a) à galeria de pets fofinhos para adoção!' />
-      <Galeria />
-      <Rodape />
-    </main>
+    <>
+      <div>
+        <HashRouter>
+          <Cabecalho />
+          <Routes>
+            <Route path='/' element={<Home />} />   
+            <Route path='/login' element={<Login />} />
+            <Route path='/contato' element={<Contato />} />
+            <Route path='/cadastro' element={<Cadastro />} />
+            <Route path='politicaprivacidade' element={<Politica />} />
+            <Route path='*' element={<NotFound />} />
+          </Routes>
+          <Rodape />
+        </HashRouter>
+      </div>
+    </>
   )
 }
 

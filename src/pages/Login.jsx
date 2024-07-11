@@ -1,0 +1,33 @@
+import { Button } from "react-bootstrap"
+import {useForm} from "react-hook-form"
+
+const Login = () => {
+  const { register, handleSubmit, formState: {errors} } = useForm()
+
+  function entrar(data) {
+    console.log(data)
+  }
+
+  return (
+    <main>
+      <form className="form-section" onSubmit={handleSubmit(entrar)}>
+        <h1 className="text-center text-success">Login</h1>
+        <hr className="text-success" />
+        <div>
+          <label htmlFor="email">E-mail</label>
+          <input type="email" id="email" className="form-control" {...register('email', {required: 'E-mail obrigatório', pattern: {value: /[\w.-]+@[\w-]+\.[\w-.]+/gi, message: 'E-mail inválido'}})} />
+          {errors.email && <small className="text-danger">{errors.email.message}</small>}
+        </div>
+        <div>
+          <label htmlFor="senha">Senha</label>
+          <input type="password" id="senha" className="form-control" {...register('senha', {required: 'A senha é obrigatória', minLength: {value: 6, message: 'Minimo 6 caracteres'}})} />
+          {errors.senha && <small className="text-danger">{errors.senha.message}</small>}
+        </div>
+        <Button variant="success" className="mt-1 w-100" type="submit">Entrar</Button>
+        <Button variant="danger" className="mt-1 w-100" type="button">Fazer login com o Google</Button>
+      </form>
+    </main>
+  )
+}
+
+export default Login
